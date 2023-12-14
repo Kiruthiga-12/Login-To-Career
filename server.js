@@ -10,7 +10,7 @@ const dirname = process.cwd();
 app.use(bp.urlencoded({ extended: false }));
 
 app.use('/', exp.static(path.join(dirname + '/view/public')))
-dotenv.config({ path: '.env' });
+dotenv.config();
 
 app.set('view engine', 'ejs');
 const port = process.env.PORT || 3000;
