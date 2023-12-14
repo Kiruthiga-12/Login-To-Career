@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        background-image: url('/Img/Career.jpg');
+        background-size: 1550px 2300px;
+        background-repeat: no-repeat;
+        background-position: 1px -1390px;
+    }
+</style>
+
+<head>
+    <title>Login To Career</title>
+    <link rel="icon" href="/Img/LTC favicon.png">
+    <link rel="stylesheet" href="/CSS/styling.css">
+    <script src="https://kit.fontawesome.com/2cfbb12faf.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="nav">
+        <h1 id="heading">Login To Career</h1>
+        <img class="img" src="/Img/LTC Logo.png">
+
+    </nav>
+    <input type="search" name="searchg" id="searchg" placeholder="Search...">
+    <form class="login displayn" id="login" action="/homepage" method="post">
+        <fieldset>
+            <legend>Login </legend>
+            <input type="email" class="log" name="email" id="mailid" value="" placeholder="someone@gmail.com"
+                required><br>
+            <input type="password" class="log" name="pass" id="pwd" value="" placeholder="password" required><br>
+            <input type="submit" class="log logs" value="Login" id="log" name="loginsubmit"><br>
+            <p>Don't have Account? <a href="#signup" id="signuplink" target="_self">Sign up</a></p>
+        </fieldset>
+    </form>
+    <form class="login" id="signup" action="/redirecttologinpage" method="post">
+        <fieldset>
+            <legend>SignUp </legend>
+            <input type="text" class="log" name="fname" id="fname" value="" placeholder="John" required><br>
+            <input type="text" class="log" name="lname" id="lname" value="" placeholder="Selvaraj" required><br>
+            <input type="email" class="log" name="email" id="mailid" value="" placeholder="someone@gmail.com"
+                required><br>
+            <input type="password" class="log" name="pass" id="pwd" value="" placeholder="password" required><br>
+            <input type="submit" class="log logs" value="Sign Up" id="sign" name="loginsubmit"><br>
+            <p>Already have an account? <a href="#login" id="loginlink" target="_self">Login</a></p>
+        </fieldset>
+    </form>
+    <footer class="footer">
+        <h4 class="ftr h3">Contact: </h4><br>
+        <p class="ftr ftr1">Illam, New Street, City.</p>
+        <a href="https://www.instagram.com/" target="_blank" title="Instagram"> <i
+                class="fa-brands fa-instagram icons i1"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" title="facebook"> <i
+                class="fa-brands fa-facebook-f icons"></i></a>
+        <a href="https://mail.google.com/" target="_blank" title="mail"> <i class="fa-solid fa-envelope icons"></i></a>
+    </footer>
+    <script>
+        //search in google
+        let search = document.getElementById("searchg");
+        search.addEventListener("keyup", (e) => {
+            if (e.key == "Enter" || e.keyCode == 13) {
+                let val = 'http://google.com/search?q=' + search.value;
+                window.open(val, "_blank");
+            }
+        });
+        //login/signp toggle.
+        let lin = document.getElementById("loginlink");
+        let sign = document.getElementById("signuplink");
+        let lg = document.getElementById("login");
+        let sp = document.getElementById("signup");
+        lin.addEventListener("click", () => {
+            lg.classList.remove("displayn");
+            sp.classList.add("displayn");
+        });
+        sign.addEventListener("click", () => {
+            lg.classList.add("displayn");
+            sp.classList.remove("displayn");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<%- include(dirname+'/view/EJS/layout/header.ejs') %>
+    <p class="loggedusername" title="user">
+        <%= loginname %>
+    </p>
+    <button class="home"><a href="/redirecttohomepage" title="home"><i
+                class="fa-solid fa-chevron-left"></i></a></button>
+    <p class="joblisttitle1">Instructions for Use </p>
+    <div class="emptyblock"></div>
+    <ol class="result2">
+        <h1>About Home Page</h1>
+        <li>Home Page contains list of jobs posted by users.</li>
+        <li>Use filters to filter search criteria by clicking on <strong>Search</strong> button.</li>
+        <li>Use <strong>Refresh button </strong>to get all jobs without any search criteria.</li>
+        <li>To join for subscription , click on <strong>Subscribe </strong>button in footer details and you will get
+            Email regarding subscription.</li>
+        <li>To unsubscribe, click on the <strong>Unsubscribe </strong> text in the email Notification.</li>
+        <li><strong>Person who posted the job details cannot use the see more options</strong>for the same job details.
+        </li>
+        <li>Person can use the <strong>see more options , if job is posted by another user.</strong></li>
+        <li>Clicking on <strong>see more</strong> button navigates to Applicant page, where you can apply for the job by
+            clicking on the <strong>Apply </strong>button.
+
+        </li>
+        <li>Clicking on the<strong>left arrow in Home page Redirects to the Login Page.</strong> </li>
+        <li>Clicking on the <strong>left arrow in other pages redirects to the home page.</strong></li>
+        <li>Use the <strong>Post a Job </strong>button to create a job posts. </li>
+        <li>To Change the profile Settings click on the <strong>Change Profile </strong> button.</li>
+        <li>To see the list of jobs posted by you click on the <strong>Posts by You</strong> button.</li>
+        <li>To see the list of jobs applied by you click on the <strong>Applied Jobs</strong> button.</li>
+        <li>To see the Instructions for use click on <strong>Instructions </strong>button.</li>
+        <li>To google type the search term in <strong>search Box</strong> in the navigation bar.</li>
+        <li>To Logout, click on the <strong>user</strong> icon on the top right corner in the navigation Bar..</li>
+    </ol>
+    <ol class="result2">
+        <h1>About Job Posting</h1>
+        <li>You can post a job by filling all required fields -
+            <strong>Designation,Company.Location.Skills,Experience,Salary </strong>details.
+        </li>
+        <li>Existing Job details cannot be reposted again.</li>
+    </ol>
+    <ol class="result2">
+        <h1>About Posts by You</h1>
+        <li>Here you will see <strong>list of jobs</strong>posted by you.</li>
+        <li>You can edit the Job details using <strong>Edit Icon .</strong></li>
+        <li>You can delete the Job details using <strong>Trash Icon .</strong></li>
+        <li>You can view the applicants of the Job details using <strong>Users Icon.</strong></li>
+    </ol>
+    <br>
+    <h3 class="result2" style="margin-left:250px;">Thankyou for your support!!! &#128515;</h3>
+    <div class="emptyblock"></div>
+    <%- include(dirname+'/view/EJS/layout/footer.ejs') %>

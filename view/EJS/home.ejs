@@ -1,0 +1,116 @@
+<%- include(dirname+'/view/EJS/layout/header.ejs') %>
+    <p class="loggedusername" title="user">
+        <%= loginname %>
+    </p>
+
+    <button class="home1"><a href="/" title="home"><i class="fa-solid fa-chevron-left"></i></a></button>
+
+    <aside
+        style="position:fixed;z-index:1;padding-top:20px;top:74px;right:-1px;width:210px;height:522px;background-color:rgb(238, 176, 95)">
+        <button type="button"
+            style="padding:10px;margin-top:95px;margin-left:40px;font-size:18px;font-weight:bold;background-color:white; border:2px solid white;border-radius:15px;">
+            <a style="text-decoration:none;color:black;" href="/createpost">Post a Job</a></button><br>
+        <button type="button"
+            style="padding:10px;margin-top:20px;margin-left:30px;font-size:18px;font-weight:bold;background-color:white; border:2px solid white;border-radius:15px;">
+            <a style="text-decoration:none;color:black;" href="/profile">Change Profile</a></button>
+        <button type="button"
+            style="padding:10px;margin-top:20px;margin-left:30px;font-size:18px;font-weight:bold;background-color:white; border:2px solid white;border-radius:15px;">
+            <a style="text-decoration:none;color:black;" href="/getjobsposted">Posts by You</a></button>
+        <button type="button"
+            style="padding:10px;margin-top:20px;margin-left:30px;font-size:18px;font-weight:bold;background-color:white; border:2px solid white;border-radius:15px;">
+            <a style="text-decoration:none;color:black;" href="/getjobsapplied">Applied Jobs</a></button>
+        <button type="button"
+            style="padding:10px;margin-top:20px;margin-left:30px;font-size:18px;font-weight:bold;background-color:white; border:2px solid white;border-radius:15px;">
+            <a style="text-decoration:none;color:black;" href="/instructions">Instructions</a></button>
+    </aside>
+    <div class="jobfilter">
+        <p class="joblisttitle">Recommended Jobs</p>
+        <form action="/redirecttohomepage" method="post">
+            <select id="hdesignation" class="searchfilter" name="hdesignation">
+                <option value="">Search by Designation</option>
+                <option value="Software Developer">Software Developer</option>
+                <option value="Tester">Tester</option>
+                <option value="Business Analyst">Business Analyst</option>
+                <option value="Full Stack Developer">Full Stack Developer</option>
+                <option value="Associate Consultant">Associate Consultant</option>
+                <option value="SAP Consultant">SAP Consultant</option>
+            </select>
+            <select id="hcompanyname" class="searchfilter" name="hcompanyname">
+                <option value="">Search by Company</option>
+                <option value="Zoho">Zoho</option>
+                <option value="Freshworks">Freshworks</option>
+                <option value="Thoughtworks">Thoughtworks</option>
+            </select>
+            <select id="hlocation" class="searchfilter" name="hlocation">
+                <option value="">Search by Location</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Kochi">Kochi</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Gurugram">Gurugram</option>
+                <option value="Gujarat">Gujarat</option>
+            </select>
+            <select id="hskills" class="searchfilter" name="hskills">
+                <option value="">Select by Skills</option>
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+                <option value="Java">Java</option>
+                <option value="Javascript">Javascript</option>
+                <option value="Python">Python</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="React">React</option>
+                <option value="Typescript">Typescript</option>
+                <option value="Node">Node</option>
+            </select>
+            <select id="hexperience" class="searchfilter" name="hexperience">
+                <option value="">Search by Experience</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <select id="hsalary" class="searchfilter" name="hsalary">
+                <option value="">Search by Salary</option>
+                <option value="5">5L</option>
+                <option value="10">10L</option>
+                <option value="15">15L</option>
+            </select>
+            <br>
+            <input type="submit" id="searchbtn" name="searchbtn" value="Search...">
+            <input type="submit" id="refreshbtn" name="refreshbtn" value="Refresh">
+        </form>
+    </div>
+    <div class="emptyblock"></div>
+    <% if(data.length>0)
+        {
+        for(let i=0;i< data.length;i++) { %>
+            <div class="emptyblock1"></div>
+            <form method="post" action="/redirecttohomepage">
+                <fieldset
+                    style="border:2px solid black;width:900px;margin-left:180px;margin-top:10px;border-radius:20px;">
+                    <label for="searchdesign" class="result1">Designation:<input type="text" name="searchdesign"
+                            id="searchdesign" class="result" value='<%= data[i].designation %>' readonly> </label><br>
+                    <label for="searchcompany" class="result1">Company: <input type="text" name="searchcompany"
+                            id="searchcompany" class="result" value='<%= data[i].company %>' readonly> </label><br>
+                    <label for="searchlocation" class="result1">Location: <input type="text" name="searchlocation"
+                            id="searchlocation" class="result" value='<%= data[i].location %>' readonly></label><br>
+                    <label for="searchskills" class="result1">Skills: <input type="text" name="searchskills"
+                            id="searchskills" class="result" value='<%= data[i].skills %>' readonly></label><br>
+                    <label for="searchexperience" class="result1">Experience: <input type="text" name="searchexperience"
+                            id="searchexperience" class="result" value='<%= data[i].experience %>' readonly></label><br>
+                    <label for="searchsalary" class="result1">Salary: <input type="text" name="searchsalary"
+                            id="searchsalary" class="result" value='<%= data[i].salary %>' readonly></label><br>
+                    <label for="postedby" class="result1">Posted by: <input type="text" name="postedby" id="postedby"
+                            class="result" value='<%= data[i].emailid %>' readonly></label><br>
+                    <input type="submit" name="applydet" value="See more.." class="seemore" formaction="/seemore"
+                        formmethod="post">
+                </fieldset>
+            </form>
+            <% } } else if(data.length==0) { %>
+                <h2 style="margin-left:400px;margin-top:130px;">No jobs Posted Yet </h2>
+                <% } %>
+                    <div class="emptyblock"></div>
+                    <%- include(dirname+'/view/EJS/layout/footer.ejs') %>

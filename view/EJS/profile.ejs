@@ -1,0 +1,96 @@
+<%- include(dirname+'/view/EJS/layout/header.ejs') %>
+    <p class="loggedusername" title="user">
+        <%= loginname %>
+    </p>
+    <button class="home"><a href="/redirecttohomepage" title="home"><i
+                class="fa-solid fa-chevron-left"></i></a></button>
+    <% if(data.length>0) {%>
+        <form action="/redirecttohomepage" method="post" style="padding-top:40px;" enctype="multipart/form-data">
+            <div clas="emptyblock">
+                <fieldset style="margin-top:30px;margin-left:400px;">
+                    <Legend>Profile</Legend>
+                    <label for="firstname">First Name</label><br>
+                    <input type="text" class="log1" id="firstname" name="fname" value='<%= data[0].firstname %>'
+                        placeholder="John"><br>
+                    <label for="lastname">Last Name</label><br>
+                    <input type="text" class="log1" id="lastname" name="lname" value='<%= data[0].lastname %>'
+                        placeholder="Selvaraj"><br>
+                    <label for="designation">Current Designation</label><br>
+                    <input type="text" class="log1" id="designation" name="design" value='<%= data[0].designation %>'
+                        placeholder="Associate"><br>
+                    <label for="skills">Skills</label><br>
+                    <input list="skillst" class="log1" name="skills" value='<%= data[0].skills %>'>
+                    <datalist id="skillst">
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                        <option value="Java">Java</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="Python">Python</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="React">React</option>
+                        <option value="Typescript">Typescript</option>
+                        <option value="Node">Node</option>
+                    </datalist><br>
+                    <label for="resume">Upload Resume</label>
+                    <input type="file" id="resume" class="log1" name="resume" value='<%= data[0].resume%> '>'<br>
+                    <label for="country">Country</label><br>
+                    <select id="country" class="log1" name="country">
+                        <option value=' <%= data[0].country%> '>
+                            <%= data[0].country%>
+                        </option>
+                        <option value="India">India</option>
+                        <option value="America">America</option>
+                        <option value="Russia">Russia</option>
+                    </select><br>
+                    <input type="submit" value="saveprofile" class="log logs" id="save" name="saveprofile">
+                </fieldset>
+            </div>
+        </form>
+        <%} else if(data.length==0) {%>
+            <form action="/redirecttohomepage" method="post" style="padding-top:40px;" enctype="multipart/form-data">
+                <div clas="emptyblock">
+                    <fieldset style="margin-top:30px;margin-left:400px;">
+                        <Legend>Profile</Legend>
+                        <label for="firstname">First Name</label><br>
+                        <input type="text" class="log1" id="firstname" name="fname" value='' placeholder="John"><br>
+                        <label for="lastname">Last Name</label><br>
+                        <input type="text" class="log1" id="lastname" name="lname" value="" placeholder="Selvaraj"><br>
+                        <label for="designation">Current Designation</label><br>
+                        <input type="text" class="log1" id="designation" name="design" value=""
+                            placeholder="Associate"><br>
+                        <label for="skills">Skills</label><br>
+                        <input list="skillst" class="log1" name="skills">
+                        <datalist id="skillst">
+                            <option value="C">C</option>
+                            <option value="C++">C++</option>
+                            <option value="Java">Java</option>
+                            <option value="Javascript">Javascript</option>
+                            <option value="Python">Python</option>
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="React">React</option>
+                            <option value="Typescript">Typescript</option>
+                            <option value="Node">Node</option>
+                        </datalist><br>
+                        <label for="resume">Upload Resume</label>
+                        <input type="file" id="resume" class="log1" name="resume" value=""><br>
+                        <label for="country">Country</label><br>
+                        <select id="country" class="log1" name="country">
+                            <option value="">Select</option>
+                            <option value="India">India</option>
+                            <option value="America">America</option>
+                            <option value="Russia">Russia</option>
+                        </select><br>
+                        <input type="submit" value="saveprofile" class="log logs" id="save" name="saveprofile">
+                    </fieldset>
+                </div>
+            </form>
+            <%}%>
+                <!-- <script>
+        let save = document.getElementById("save");
+        save.addEventListener("click", () => {
+            alert("Profile Saved Successfully!!");
+        })
+    </script> -->
+                <%- include(dirname+'/view/EJS/layout/footer.ejs') %>

@@ -1,0 +1,57 @@
+<%- include(dirname+'/view/EJS/layout/header.ejs') %>
+    <p class="loggedusername" title="user">
+        <%= loginname %>
+    </p>
+    <button class="home"><a href="/redirecttohomepage" title="home"><i
+                class="fa-solid fa-chevron-left"></i></a></button>
+    <p class="joblisttitle1">List of Applicant Details for this job</p>
+    <div class="emptyblock"></div>
+    <% if(data.length>0)
+        {
+        for(let i=0;i< data.length;i++) { %>
+            <div class="emptyblock1"></div>
+            <form method="post" action="/redirecttohomepage">
+                <fieldset
+                    style="border:2px solid black;width:900px;margin-left:180px;margin-top:10px;border-radius:20px;">
+                    <!-- <label for="searchdesign" class="result1">Designation:<input type="text" readonly
+                            name="searchdesign" id="searchdesign" class="result" value='<%= data[i].designation %>'>
+                    </label><br>
+                    <label for="searchcompany" class="result1">Company: <input type="text" readonly name="searchcompany"
+                            id="searchcompany" class="result" value='<%= data[i].company %>'></label><br>
+                    <label for="searchlocation" class="result1">Location: <input type="text" readonly
+                            name="searchlocation" id="searchlocation" class="result"
+                            value='<%= data[i].location %>'></label><br>
+                    <label for="searchskills" class="result1">Skills: <input type="text" name="searchskills" readonly
+                            id="searchskills" class="result" value='<%= data[i].skills %>'></label><br>
+                    <label for="searchexperience" class="result1">Experience: <input type="text" name="searchexperience"
+                            readonly id="searchexperience" class="result" value='<%= data[i].experience %>'></label><br>
+                    <label for="searchsalary" class="result1">Salary: <input type="text" name="searchsalary" readonly
+                            id="searchsalary" class="result" value='<%= data[i].salary %>'></label><br> -->
+                    <label for="searchfname" class="result1">First Name: <input type="text" name="searchfname"
+                            id="searchfname" class="result" readonly
+                            style="font-size:16px;font-style:italic;font-weight:bold;margin-top:10px;"
+                            value='<%= data[i].firstname %>'></label><br>
+                    <label for="searchlname" class="result1">Last Name: <input type="text" name="searchlname"
+                            id="searchlname" class="result" readonly
+                            style="font-size:16px;font-style:italic;font-weight:bold;margin-top:10px;"
+                            value='<%= data[i].lastname %>'></label><br>
+                    <label for="searchmobile" class="result1">Mobile Number: <input type="text" name="searchmobile"
+                            id="searchmobile" class="result" readonly
+                            style="font-size:16px;font-weight:bold;margin-top:10px;"
+                            value='<%= data[i].mobile %>'></label><br>
+                    <label for="emailid" class="result1">Email ID: <input type="text" name="emailid" id="emailid"
+                            class="result" readonly style="font-size:16px;font-weight:bold;margin-top:10px;text-decoration: underline;"
+                            value='<%= data[i].emailid %>'></label><br><br>
+                    <label for="comments" style="font-style:italic;font-weight: bold;" class="result1">
+                        Comments:</label><br>
+                    <textarea readonly
+                        style="margin-left:30px;outline:1px solid grey;border-radius: 5px;width:500px;height:50px;"
+                        name="comments" id="comments" class="result"><%= data[i].comments %> </textarea><br><br>
+
+                </fieldset>
+            </form>
+            <% } } else if(data.length==0) { %>
+                <h2 style="margin-left:400px;margin-top:130px;">No Applicants for this job </h2>
+                <% } %>
+                    <div class="emptyblock"></div>
+                    <%- include(dirname+'/view/EJS/layout/footer.ejs') %>

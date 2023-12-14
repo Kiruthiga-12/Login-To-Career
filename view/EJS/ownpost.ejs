@@ -1,0 +1,58 @@
+<%- include(dirname+'/view/EJS/layout/header.ejs') %>
+        <p class="loggedusername" title="user">
+                <%= loginname %>
+        </p>
+        <button class="home"><a href="/redirecttohomepage" title="home"><i
+                                class="fa-solid fa-chevron-left"></i></a></button>
+        <p class="joblisttitle1">Job Details Posted by You</p>
+        <div class="emptyblock"></div>
+        <% if(data.length>0)
+                {
+                for(let i=0;i< data.length;i++) { %>
+                        <div class="emptyblock1"></div>
+                        <form method="post" action="/redirecttohomepage">
+                                <fieldset
+                                        style="border:2px solid black;width:900px;margin-left:180px;margin-top:10px;border-radius:20px;">
+                                        <label for="searchdesign" class="result1">Designation:<input type="text"
+                                                        name="searchdesign" id="searchdesign" class="result"
+                                                        value='<%= data[i].designation %>' readonly> </label><br>
+                                        <label for="searchcompany" class="result1">Company: <input type="text"
+                                                        name="searchcompany" id="searchcompany" class="result"
+                                                        value='<%= data[i].company %>' readonly> </label><br>
+                                        <label for="searchlocation" class="result1">Location: <input type="text"
+                                                        name="searchlocation" id="searchlocation" class="result"
+                                                        value='<%= data[i].location %>' readonly></label><br>
+                                        <label for="searchskills" class="result1">Skills: <input type="text"
+                                                        name="searchskills" id="searchskills" class="result"
+                                                        value='<%= data[i].skills %>' readonly></label><br>
+                                        <label for="searchexperience" class="result1">Experience: <input type="text"
+                                                        name="searchexperience" id="searchexperience" class="result"
+                                                        value='<%= data[i].experience %>' readonly></label><br>
+                                        <label for="searchsalary" class="result1">Salary: <input type="text"
+                                                        name="searchsalary" id="searchsalary" class="result"
+                                                        value='<%= data[i].salary %>' readonly></label><br>
+                                        <label for="postedby" class="result1">Posted by: <input type="text"
+                                                        name="postedby" id="postedby" class="result" value='You'
+                                                        readonly></label><br>
+                                        <input type="submit" name="edit" value="edit" class="edit"
+                                                formaction="/editpost" title="Edit post" formmethod="post"><i
+                                                class="fas fa-edit editi"></i>
+                                        <input type="submit" name="deletepost" value="deletepost" class="delete"
+                                                id="delete" formaction="/redirecttohomepage" title="Delete post"
+                                                formmethod="post"><i class="fa-solid fa-trash deletei"></i>
+                                        <input type="submit" name="applicants" value="applicants" class="applicants"
+                                                formaction="/getapplicantsdetails" title="Get Applicant Details"
+                                                formmethod="post"><i class="fa-solid fa-users applicantsi"></i>
+                                </fieldset>
+                        </form>
+                        <% } } else if(data.length==0) { %>
+                                <h2 style="margin-left:400px;margin-top:130px;">No jobs posted by you </h2>
+                                <% } %>
+                                        <div class="emptyblock"></div>
+                                        <script>
+                                                let del = document.getElementById("delete");
+                                                del.addEventListener("click", () => {
+                                                        alert("Record deleted Successfully!!!");
+                                                })
+                                        </script>
+                                        <%- include(dirname+'/view/EJS/layout/footer.ejs') %>

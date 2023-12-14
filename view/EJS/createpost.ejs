@@ -1,0 +1,64 @@
+<%- include(dirname+'/view/EJS/layout/header.ejs') %>
+    <p class="loggedusername" title="user">
+        <%= loginname %>
+    </p>
+
+    <button class="home"><a href="/redirecttohomepage" title="home"><i
+                class="fa-solid fa-chevron-left"></i></a></button>
+
+    <form action="/redirecttohomepage" method="post" style="padding-top:120px;">
+        <div class="emptyblock">
+            <fieldset style="margin-left:300px;">
+                <Legend>Job Details</Legend>
+                <label for="desig" class="label1">Designation</label>
+                <input type="text" class="log1" id="desig" name="desig" value="" placeholder="Associate" required><br>
+                <label for="companyname" class="label1">Company</label>
+                <select id="companyname" name="company" class="log1" required>
+                    <option value="">Select</option>
+                    <option value="Zoho">Zoho</option>
+                    <option value="Freshworks">Freshworks</option>
+                    <option value="Thoughtworks">Thoughtworks</option>
+                </select><br>
+                <label for="location" class="label1">Location</label>
+                <select id="location" name="location" class="log1" required>
+                    <option value="">Select</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Kochi">Kochi</option>
+                </select><br>
+                <label for="skills" class="label1">Skills</label>
+                <input list="skillst" class="log1" name="skills" required>
+                <datalist id="skillst">
+                    <option value="C">C</option>
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="Python">Python</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="React">React</option>
+                    <option value="Typescript">Typescript</option>
+                    <option value="Node">Node</option>
+                </datalist><br>
+                <label for="exp" class="label1">Experience</label>
+                <input type="text" class="log1" id="exp" name="exp" value="" required
+                    placeholder="2-4 year of experience"><br>
+                <label for="salary" class="label1">Salary</label>
+                <select id="salary" class="log1" required name="salary">
+                    <option value="">Select</option>
+                    <option value="5">5L </option>
+                    <option value="10 ">10L</option>
+                    <option value="15">15L</option>
+                </select><br>
+                <input type="submit" name="post" value="post" class="log logs" id="post"><br>
+            </fieldset>
+        </div>
+    </form>
+
+    <!-- <script>
+        let post = document.getElementById("post");
+        post.addEventListener("click", () => {
+            alert("Job Posted Successfully!!");
+        })
+    </script> -->
+    <%- include(dirname+'/view/EJS/layout/footer.ejs') %>

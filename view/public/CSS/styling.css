@@ -1,0 +1,436 @@
+body {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav {
+    background-color: rgb(8, 50, 70);
+    text-align: left;
+    color: white;
+    height: 80px;
+    width: 100%;
+    margin-left: -9px;
+    margin-top: -30px;
+    padding-left: 17px;
+    margin-bottom: -50px;
+}
+
+.nav1 {
+    background-color: rgb(8, 50, 70);
+    text-align: left;
+    color: white;
+    height: 80px;
+    width: 100%;
+    margin-left: -9px;
+    margin-top: -12px;
+    padding-left: 17px;
+    margin-bottom: -50px;
+    position: fixed;
+    z-index: 2;
+}
+
+.img {
+    float: left;
+    width: 150px;
+    height: 50px;
+    margin-top: -70px;
+    margin-left: 40px;
+}
+
+#heading {
+    padding-left: 230px;
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+#heading1 {
+    padding-left: 230px;
+    font-size: 30px;
+    padding-top: -8px;
+}
+
+.footer {
+    background-color: rgb(5, 33, 46);
+    height: 80px;
+    width: 100%;
+    margin-left: -9px;
+    padding-left: 15px;
+    position: fixed;
+    bottom: 0
+}
+
+.ftr {
+    color: white;
+    margin-left: 30px;
+    display: inline-block;
+    margin-bottom: -10px;
+}
+
+.ftr1 {
+    margin-top: -10px;
+}
+
+.h3 {
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.icons {
+    font-size: 30px;
+    margin-top: -90px;
+    color: white;
+    margin-left: 100px;
+}
+
+.i1 {
+    margin-left: 190px;
+    cursor: pointer;
+}
+
+.subscribe {
+    display: inline-block;
+    padding: 4px;
+    border-radius: 3px;
+    font-size: 17px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn1 {
+    display: inline-block;
+    margin-left: 500px;
+    margin-top: -50px;
+    margin-bottom: -10px;
+}
+
+#searchg {
+    padding: 8px;
+    display: inline-block;
+    margin-left: 1200px;
+    border-radius: 5px;
+    outline: none;
+}
+
+#searchg1 {
+    padding: 8px;
+    display: inline-block;
+    margin-left: 1150px;
+    border-radius: 5px;
+    outline: none;
+    position: fixed;
+    margin-top: 8px;
+    z-index: 2;
+}
+
+.login {
+    text-align: center;
+    width: 30%;
+    margin-left: 580px;
+    margin-top: 60px;
+
+}
+
+.log {
+    padding: 10px;
+    width: 80%;
+    margin-top: 30px;
+    border-radius: 5px;
+    outline: none;
+    background-color: transparent;
+}
+
+.seemore {
+    padding: 5px;
+    width: 10%;
+    border-radius: 5px;
+    outline: none;
+    background-color: blueviolet;
+    color: white;
+    font-size: 18px;
+    margin-left: 500px;
+    cursor: pointer;
+}
+
+.log1 {
+    padding: 8px;
+    width: 70%;
+    margin-top: 3px;
+    border-radius: 5px;
+    outline: none;
+    background-color: transparent;
+    margin-bottom: 12px;
+}
+
+
+
+legend {
+    color: green;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.logs {
+    width: 60%;
+    background-color: rgb(3, 48, 33);
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.displayn {
+    display: none;
+}
+
+
+fieldset {
+    border: none;
+}
+
+.loggedusername {
+    margin-top: 15px;
+    color: white;
+    margin-left: 800px;
+    font-size: 18px;
+    font-weight: bold;
+    position: fixed;
+    z-index: 2;
+}
+
+.logout {
+    margin-left: 1400px;
+    margin-top: 10px;
+    font-size: 25px;
+    background-color: rgb(8, 50, 70);
+    border: none;
+    color: white;
+    position: fixed;
+    z-index: 2;
+}
+
+
+.logout a {
+    color: white;
+}
+
+.label1 {
+    margin-right: 50px;
+    margin-top: 20px;
+}
+
+
+.home1 {
+    font-size: 50px;
+    padding: 10px;
+    position: fixed;
+    top: 320px;
+    left: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+.home {
+    font-size: 50px;
+    padding: 10px;
+    position: fixed;
+    top: 320px;
+    left: 80px;
+    border: none;
+    background-color: transparent;
+}
+
+.edit,
+.delete,
+.applicants {
+    font-size: 30px;
+    margin-left: 30px;
+    height: 50px;
+    width: 70px;
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+.edit {
+    margin-left: 600px;
+}
+
+.editi,
+.deletei,
+.applicantsi {
+    color: black;
+    font-size: 30px;
+    margin-left: -40px;
+}
+
+.joblisttitle {
+    position: fixed;
+    top: 80px;
+    left: 100px;
+    font-size: 24px;
+    color: blueviolet;
+}
+
+.joblisttitle1 {
+    position: fixed;
+    padding-top: 40px;
+    padding-left: 100px;
+    top: 53px;
+    font-size: 24px;
+    left: -1px;
+    color: blueviolet;
+    width: 100%;
+    height: 50px;
+    background-color: springgreen;
+    z-index: 2;
+
+}
+
+#hdesignation {
+    position: fixed;
+    top: 110px;
+    left: 350px;
+}
+
+#hcompanyname {
+    position: fixed;
+    top: 110px;
+    left: 550px;
+}
+
+#hlocation {
+    position: fixed;
+    top: 110px;
+    left: 730px;
+}
+
+#hskills {
+    position: fixed;
+    top: 110px;
+    left: 900px;
+}
+
+#hexperience {
+    position: fixed;
+    top: 110px;
+    left: 1040px;
+}
+
+#hsalary {
+    position: fixed;
+    top: 150px;
+    left: 350px;
+}
+
+#searchbtn {
+    position: fixed;
+    top: 150px;
+    left: 530px;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+#jobalertbtn {
+    position: fixed;
+    top: 150px;
+    left: 630px;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 5px;
+    color: blueviolet;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+#refreshbtn {
+    position: fixed;
+    top: 150px;
+    left: 650px;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 5px;
+    color: blue;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+.searchfilter {
+    font-size: 15px;
+    padding: 5px;
+    border: none;
+    font-style: italic;
+}
+
+.jobfilter {
+    background-color: springgreen;
+    width: 1300px;
+    height: 120px;
+    position: fixed;
+    z-index: 1;
+    top: 78px;
+    left: -10px;
+}
+
+.emptyblock {
+    height: 190px;
+    margin-top: 10px;
+}
+
+.emptyblock1 {
+    height: 30px;
+}
+
+.result {
+    border: none;
+    outline: none;
+    width: 700px;
+    font-size: 18px;
+    background-color: transparent;
+    margin-top: 8px;
+}
+
+.result1 {
+    margin-left: 30px;
+    width: 100px;
+    font-size: 18px;
+    background-color: transparent;
+    margin-top: 8px;
+}
+
+.result2 {
+    margin-left: 200px;
+    font-style: italic;
+}
+
+#searchdesign {
+    font-weight: bolder;
+}
+
+#searchcompany,
+#postedby {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+#searchlocation {
+    font-weight: 100;
+}
+
+#searchskills {
+    font-style: italic;
+    font-weight: 900;
+}
+
+
+#searchsalary {
+    font-weight: 700;
+}

@@ -1,0 +1,24 @@
+<footer class="footer">
+    <h4 class="ftr h3">Contact: </h4><br>
+    <p class="ftr ftr1">Illam, New Street, City.</p>
+    <button type="button" class="btn1"><a href="/subscribe" target="_blank" class="subscribe"
+            title="Subscribe">Subscribe</a></button>
+    <a href="https://www.instagram.com/" target="_blank" title="Instagram"> <i
+            class="fa-brands fa-instagram icons i1"></i></a>
+    <a href="https://www.facebook.com/" target="_blank" title="Facebook"> <i
+            class="fa-brands fa-facebook-f icons"></i></a>
+    <a href="https://mail.google.com/" target="_blank" title="Email"> <i class="fa-solid fa-envelope icons"></i></a>
+</footer>
+<script>
+    //search in google
+    let search = document.getElementById("searchg1");
+    search.addEventListener("keyup", (e) => {
+        if (e.key == "Enter" || e.keyCode == 13) {
+            let val = 'http://google.com/search?q=' + search.value;
+            window.open(val, "_blank");
+        }
+    });
+</script>
+</body>
+
+</html>

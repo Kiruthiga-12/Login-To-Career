@@ -1,0 +1,68 @@
+<%- include(dirname+'/view/EJS/layout/header.ejs') %>
+        <p class="loggedusername" title="user">
+                <%= loginname %>
+        </p>
+        <button class="home"><a href="/redirecttohomepage" title="home"><i
+                                class="fa-solid fa-chevron-left"></i></a></button>
+        <p class="joblisttitle1">Apply for Job </p>
+        <div class="emptyblock"></div>
+        <% if(data.length>0)
+                {
+                for(let i=0;i< data.length;i++) { %>
+                        <div class="emptyblock1"></div>
+                        <form method="post" action="/redirecttohomepage">
+                                <fieldset
+                                        style="border:2px solid black;width:900px;margin-left:180px;margin-top:10px;border-radius:20px;">
+                                        <label for="searchdesign" class="result1">Designation:<input type="text"
+                                                        name="searchdesign" id="searchdesign" class="result" readonly
+                                                        value='<%= data[i].designation %>'> </label><br>
+                                        <label for="searchcompany" class="result1">Company: <input type="text"
+                                                        name="searchcompany" id="searchcompany" class="result" readonly
+                                                        value='<%= data[i].company %>'></label><br>
+                                        <label for="searchlocation" class="result1">Location: <input type="text"
+                                                        name="searchlocation" id="searchlocation" class="result"
+                                                        readonly value='<%= data[i].location %>'></label><br>
+                                        <label for="searchskills" class="result1">Skills: <input type="text"
+                                                        name="searchskills" id="searchskills" class="result" readonly
+                                                        value='<%= data[i].skills %>'></label><br>
+                                        <label for="searchexperience" class="result1">Experience: <input type="text"
+                                                        name="searchexperience" id="searchexperience" class="result"
+                                                        readonly value='<%= data[i].experience %>'></label><br>
+                                        <label for="searchsalary" class="result1">Salary: <input type="text"
+                                                        name="searchsalary" id="searchsalary" class="result" readonly
+                                                        value='<%= data[i].salary %>'></label><br>
+                                        <label for="postedby" class="result1">Posted by: <input type="text"
+                                                        name="postedby" id="postedby" class="result" readonly
+                                                        value='<%= data[i].emailid %>'></label><br>
+                                        <label for="searchfname" class="result1">First Name: <input type="text"
+                                                        name="searchfname" placeholder="Enter your First name.."
+                                                        id="searchfname" class="result" required
+                                                        style="font-size:16px;font-style:italic;font-weight:400;margin-top:10px;"
+                                                        value=''></label><br>
+                                        <label for="searchlname" class="result1">Last Name: <input type="text"
+                                                        name="searchlname" placeholder="Enter your Last name.."
+                                                        id="searchlname" class="result" required
+                                                        style="font-size:16px;font-style:italic;font-weight:400;margin-top:10px;"
+                                                        value=''></label><br>
+                                        <label for="searchmobile" class="result1">Mobile Number: <input type="text"
+                                                        name="searchmobile" placeholder="Enter your Mobile Number.."
+                                                        id="searchmobile" class="result" required
+                                                        style="font-size:16px;font-weight:200;margin-top:10px;"
+                                                        value=''></label><br><br>
+                                        <label for="comments" style="font-style:italic;font-weight: bold;"
+                                                class="result1">Enter
+                                                Comments:</label><br>
+                                        <textarea required
+                                                style="margin-left:30px;outline:1px solid grey;border-radius: 5px;width:500px;height:50px;"
+                                                name="comments" id="comments" value="" class="result"
+                                                placeholder="Enter queries/comments..."></textarea><br><br>
+                                        <input type="submit" name="applydet" value="Apply" class="seemore"
+                                                formaction="/appliedforjob" formmethod="post">
+
+                                </fieldset>
+                        </form>
+                        <% } } else if(data.length==0) { %>
+                                <h2 style="margin-left:400px;margin-top:130px;">No jobs posted by you </h2>
+                                <% } %>
+                                        <div class="emptyblock"></div>
+                                        <%- include(dirname+'/view/EJS/layout/footer.ejs') %>
