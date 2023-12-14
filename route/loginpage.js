@@ -54,7 +54,7 @@ exports.login = (req, res) => {
             if (data.length != 0) {
                 LTC_jobpost.find()
                     .then((data) => {
-                        access_key = jwt.sign({ emailid: req.body.email, password: req.body.pass }, process.env.Secret_Access_key, { expiresIn: '2h' });
+                        access_key = jwt.sign({ emailid: req.body.email, password: req.body.pass }, process.env.secretacceskey, { expiresIn: '2h' });
                         exports.access_key = access_key;
                         res.render(path.join(dirname + '/view/EJS/home.ejs'), { dirname: dirname, loginname: username, data: data });
                     })
