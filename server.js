@@ -25,6 +25,5 @@ mong.connect(process.env.dbconnection).then(() => console.log("Db Connected"))
 app.use('/', require('./route/route'));
 
 app.listen(port, () => {
-    console.log(process.env.user)
     console.log("Listening to the port");
 });
