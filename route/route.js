@@ -20,7 +20,7 @@ const assign_user = (req, res, next) => {
 //verifying token- accesskey
 const verifytoken = (req, res, next) => {
     req.token = login_det.access_key;
-    jwt.verify(req.token, process.env.Secret_Access_Key, (error, verifiedToken) => {
+    jwt.verify(req.token, process.env.secretaccesskey, (error, verifiedToken) => {
         if (error)
             res.json({ error: error.message });
         else
